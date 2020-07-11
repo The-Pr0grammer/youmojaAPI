@@ -12,7 +12,8 @@ class CreateBusinesses < ActiveRecord::Migration[6.0]
       t.string :facebook
       t.string :phone
       t.string :email
-      t.string :password
+      t.string :image_url
+      t.integer :hearts
       t.timestamps
     end
   end

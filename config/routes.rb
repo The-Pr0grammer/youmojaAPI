@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :biz_badges
+  resources :badges
+  resources :quotes
   resources :user_bizs
   resources :businesses
   resources :users

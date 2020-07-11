@@ -1,0 +1,2 @@
+class BizBadgesController < ApplicationController
+end
