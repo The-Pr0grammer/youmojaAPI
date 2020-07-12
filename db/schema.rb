@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_07_11_011306) do
     t.string "phone"
     t.string "email"
     t.string "image_url"
+    t.integer "hearts"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
