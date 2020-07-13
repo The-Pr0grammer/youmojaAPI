@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :website
       t.string :password
+      t.array :likes
       t.timestamps
     end
   end

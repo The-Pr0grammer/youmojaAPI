@@ -5,7 +5,7 @@ class BusinessesController < ApplicationController
     end
     def update 
         @biz = Business.find(params[:id])
-        @biz.update(hearts: params[:hearts])
-        @biz.save
+        @biz.update(hearts: params["hearts"])
+        # @biz.save
     end 
 end
