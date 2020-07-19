@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_152427) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "quotes", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
     t.integer "business_id"
     t.integer "user_id"
     t.string "content"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_152427) do
     t.string "username"
     t.string "website"
     t.string "password"
+    t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

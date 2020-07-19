@@ -1,6 +1,6 @@
-class CreateQuotes < ActiveRecord::Migration[6.0]
+class CreateComments < ActiveRecord::Migration[6.0]
   def change
-    create_table :quotes do |t|
+    create_table :comments do |t|
       t.integer :business_id
       t.integer :user_id
       t.string :content

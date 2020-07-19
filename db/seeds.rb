@@ -11,10 +11,15 @@ Business.create!(name: "Black Flag Apparel", city: "Staten Island", state: "NY",
 Business.create!(name: "Jaded Faces", city: "Staten Island", state: "NY", industry: "Beauty", summary: "Skin care , Lash and beaty asthetic work", tags: "makeup, lashes, beauty", website: "JF.com", twitter: "Twitter/JadaG",image_url:"https://blackgirlish.files.wordpress.com/2015/05/d80076c65d952bb3e4bc6aca4d6a9404.jpg",hearts:0)
 Business.create!(name: "Panama Pleasures", city: "Bronx", state: "NY", industry: "Adult", summary: "Real Bitch Shit", tags: "rap, dimes, panama", website: "PANAMADIMES.com", twitter: "Twitter/PanamaDimes",image_url:"https://media1.tenor.com/images/c52553d13a8d83fa19ccc0bb0a5a2c0f/tenor.gif?itemid=4716149",hearts:0)
 
-User.create!(name: "Anthony Holder", username: "TripleP", website: "LOA.com", password: "cash1")
-User.create!(name: "Jada Gordon", username: "JadaG", website: "JF.com", password: "cash2")
-User.create!(name: "Diamond Clark", username: "Panama", website: "PP.com", password: "cash3")
+User.create!(name: "Anthony Holder", username: "TripleP", website: "LOA.com", img_url:"https://image.freepik.com/free-photo/burning-wood-night_149066-1410.jpg", password: "cash1")
+User.create!(name: "Jada Gordon", username: "JadaG", website: "JF.com", img_url:"https://thelearnedfangirl.com/wp-content/uploads/2014/06/Michiko-to-Hatchin-michiko-to-hatchin-32569498-1280-720.jpg", password: "cash2")
+User.create!(name: "Diamond Clark", username: "Panama", website: "PP.com", img_url:"https://images.fineartamerica.com/images-medium-large-5/panama-flag-vintage-distressed-finish-design-turnpike.jpg", password: "cash3")
 
 UserBiz.create!(user_id:1, business_id:1)
 UserBiz.create!(user_id:2, business_id:2)
 UserBiz.create!(user_id:3, business_id:3)
+
+Comment.create!(user_id:1, business_id:1, content:"test1")
+Comment.create!(user_id:2, business_id:2, content:"test2")
+Comment.create!(user_id:3, business_id:3, content:"test3")
+Comment.create!(user_id:1, business_id:1, content:"test4")
