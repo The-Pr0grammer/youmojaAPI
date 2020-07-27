@@ -10,5 +10,3 @@ class UserBizsController < ApplicationController
         include: {user: {only: ['username','img_url']}, business: {include: {comments: {include: {user: {only: ['username','img_url'] }}}}}}
     end
 end
-
-//test
