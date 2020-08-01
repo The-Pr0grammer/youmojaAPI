@@ -4,9 +4,8 @@ class CreateBusinesses < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :city
       t.string :state
-      t.string :industry
       t.string :summary
-      t.string :tags
+      t.string :categories
       t.string :website
       t.string :twitter
       t.string :facebook

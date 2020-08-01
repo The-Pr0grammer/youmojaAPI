@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #♥️
 
-Business.create!(name: "Black Flag Apparel", city: "Staten Island", state: "NY", industry: "Fashion", summary: "Black Flag: Never Give Up 🏴", categories: "Coaching,Education,Non Profit", website: "BFNGU.com", twitter: "Twitter/NGU",image_url:"https://cdn.dribbble.com/users/908023/screenshots/7195388/media/da178ba79a307d5fb608e6307507c2cc.png",hearts:0)
-Business.create!(name: "Jaded Faces", city: "Staten Island", state: "NY", industry: "Beauty", summary: "Skin care , Lash and beaty asthetic work. Yee", categories: "Fashion,Beauty & Hair", website: "JF.com", twitter: "Twitter/JadaG",image_url:"https://blackgirlish.files.wordpress.com/2015/05/d80076c65d952bb3e4bc6aca4d6a9404.jpg",hearts:0)
-Business.create!(name: "Panama Pleasures", city: "Bronx", state: "NY", industry: "Adult", summary: "Real Bitch Shit🇵🇦", categories: "Music,Recreation", website: "PANAMADIMES.com", twitter: "Twitter/PanamaDimes",image_url:"https://media1.tenor.com/images/c52553d13a8d83fa19ccc0bb0a5a2c0f/tenor.gif?itemid=4716149",hearts:0)
+Business.create!(name: "Black Flag Apparel", city: "Staten Island", state: "NY", summary: "Black Flag: Never Give Up 🏴", categories: "Coaching,Fashion,Non Profit", website: "BFNGU.com", twitter:"https://twitter.com/N_everG_iveU_p",image_url:"https://cdn.dribbble.com/users/908023/screenshots/7195388/media/da178ba79a307d5fb608e6307507c2cc.png",hearts:0)
+Business.create!(name: "Jaded Faces", city: "Staten Island", state: "NY", summary: "Skin care , Lash and beauty asthetic work. Yee", categories: "Fashion,Beauty & Hair", website: "JF.com", twitter:"https://twitter.com/N_everG_iveU_p",image_url:"https://blackgirlish.files.wordpress.com/2015/05/d80076c65d952bb3e4bc6aca4d6a9404.jpg",hearts:0)
+Business.create!(name: "Panama Pleasures", city: "Bronx", state: "NY", summary: "Real Bitch Shit🇵🇦", categories: "Music,Recreation", website: "PANAMADIMES.com", twitter:"https://twitter.com/N_everG_iveU_p",image_url:"https://media1.tenor.com/images/c52553d13a8d83fa19ccc0bb0a5a2c0f/tenor.gif?itemid=4716149",hearts:0)
 
 User.create!(name: "Anthony Holder", username: "TripleP", website: "LOA.com", img_url:"https://image.freepik.com/free-photo/burning-wood-night_149066-1410.jpg", password: "cash1")
 User.create!(name: "Jada Gordon", username: "JadaG", website: "JF.com", img_url:"https://thelearnedfangirl.com/wp-content/uploads/2014/06/Michiko-to-Hatchin-michiko-to-hatchin-32569498-1280-720.jpg", password: "cash2")
