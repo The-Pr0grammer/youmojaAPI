@@ -2,12 +2,16 @@
 
 one:
   name: MyString
-  username: MyString
+  useername: MyString
   website: MyString
-  password: MyString
+  img_url: MyString
+  email: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
 
 two:
   name: MyString
-  username: MyString
+  useername: MyString
   website: MyString
-  password: MyString
+  img_url: MyString
+  email: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
