@@ -3,11 +3,12 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
   def login
-    user = User.find_by(email: user_params[:email])
+    user = User.find_by(email: user_params[:email]) ||
+    user = User.find_by(username: user_params[:email])
     # byebug
-    if user&.authenticate(user_params[:password])
+    if user&.authenticate(user_params[:opaque])
       auth_token = JsonWebToken.encode(user_id: user.id)
-      render json: { auth_token: auth_token }, status: :ok
+      render json: { auth_token: auth_token, email: user.email, id: user.id }, status: :ok
     else
     render json: { error: 'Invalid username/password' }, status: :unauthorized
     end
@@ -16,7 +17,6 @@ class UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-
     render json: @users
   end
 
@@ -27,13 +27,17 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params)
-
-    if @user.save && @user.authenticate(user_params[:password])
+    @user = User.new(user_params.except(:opaque,:opaque_two))
+    @email = User.find_by(email: user_params[:email])
+    @username = User.find_by(username: user_params[:username])
+    @user.password = user_params[:opaque]
+    if @user.save && @user.authenticate(user_params[:opaque])
       auth_token = JsonWebToken.encode(user_id: @user.id)
-      render json: { auth_token: auth_token }, status: :ok
-    else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: { auth_token: auth_token, id: @user.id  }, status: :ok
+    elsif @email 
+      render json: { error: 'That email is already registered' }, status: :unprocessable_entity
+    elsif @username 
+      render json: { error: 'That username is taken' }, status: :unprocessable_entity
     end
   end
 
@@ -59,6 +63,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name, :username, :website, :img_url, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :username, :website, :img_url, :email, :opaque, :opaque_two)
     end
 end
