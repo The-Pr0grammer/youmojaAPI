@@ -6,7 +6,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :website
       t.string :img_url
       t.string :email
-      t.string :password_digest
       t.timestamps
     end
     add_index :users, :email, unique: true
