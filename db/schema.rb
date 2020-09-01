@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_05_013015) do
+ActiveRecord::Schema.define(version: 2020_08_26_011824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,10 +48,19 @@ ActiveRecord::Schema.define(version: 2020_08_05_013015) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "comment_votes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "comment_id"
+    t.integer "vote"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer "business_id"
     t.integer "user_id"
     t.string "content"
+    t.integer "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -63,7 +72,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_013015) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_likes", force: :cascade do |t|
+  create_table "user_hearts", force: :cascade do |t|
     t.integer "user_id"
     t.integer "business_id"
     t.datetime "created_at", precision: 6, null: false
@@ -76,7 +85,6 @@ ActiveRecord::Schema.define(version: 2020_08_05_013015) do
     t.string "website"
     t.string "img_url"
     t.string "email"
-    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

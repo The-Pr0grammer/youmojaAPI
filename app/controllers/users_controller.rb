@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user
       # auth_token = JsonWebToken.encode(user_id: @user.id)
       # render json: { auth_token: auth_token, email: @user.email, id: @user.id }, status: :ok
-      render json: { email: @user.email, id: @user.id , opaque: @opaque}, status: :ok
+          render json: { email: @user.email, id: @user.id , opaque: @opaque}, status: :ok
     else
     render json: { error: 'Invalid username/password' }, status: :unauthorized
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user ,include: {user_hearts: {include: {business: {include: {comments: {include: {user: {only: ['id','username','img_url'] }}}}}}}}
   end
 
   # POST /users

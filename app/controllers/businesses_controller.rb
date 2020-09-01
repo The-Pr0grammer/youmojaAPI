@@ -6,7 +6,7 @@ class BusinessesController < ApplicationController
     end
     def show
         @business = Business.find_by(id:params[:id])        
-        render json: @business, include: {comments: {include: {user: {only: ['username','img_url'] }}}}
+        render json: @business, include: {comments: {include: {user: {only: ['id','name','username','img_url'] }, comment_votes: {only: ['id','user_id','vote']}}}}
     end
     def update 
         @biz = Business.find(params[:id])

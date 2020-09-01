@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :user_likes
+  resources :comment_votes
+  resources :user_hearts
   resources :biz_badges
   resources :badges
   resources :comments
