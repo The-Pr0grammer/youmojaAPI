@@ -83,3 +83,15 @@ production:
   database: youmoja_api_production
   username: youmoja_api
   password: <%= ENV['YOUMOJA_API_DATABASE_PASSWORD'] %>
+
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+ 
+development:
+  <<: *default
+  database: upload_carrier_dev
+  username: youmoja_api_development
+  password: <%= ENV['YOUMOJA_API_DATABASE_PASSWORD'] %>
+  host: localhost

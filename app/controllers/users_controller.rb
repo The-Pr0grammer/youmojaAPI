@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user ,include: {user_hearts: {include: {business: {include: {comments: {include: {user: {only: ['id','username','img_url'] }}}}}}}}
+    render json: @user ,include: {user_bizs:{include:{user:{},business:{include:{comments:{include:{user:{}}}}}}},user_hearts: {include:{user_biz:{include:{user:{},business:{include:{comments:{include:{user:{}}}}}}}}}}
   end
 
   # POST /users
@@ -71,6 +71,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name, :username, :website, :img_url, :email, :opaque, :opaque_two) ##password and password confirmation keys were removed 8/20
+      params.require(:user).permit(:id,:name, :username, :website, :img_url, :email, :opaque, :opaque_two) ##password and password confirmation keys were removed 8/20
     end
 end

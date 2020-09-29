@@ -9,4 +9,7 @@ class UserBizsController < ApplicationController
         render json: @user_biz, 
         include: {user: {only: ['id','name','username','img_url']}, business: {include: {comments: {include: {user: {only: ['id','username','img_url'] }}}}}}
     end
+    
+
+
 end

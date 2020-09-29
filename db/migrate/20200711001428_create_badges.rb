@@ -5,7 +5,7 @@ class CreateBadges < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :business_id
       t.integer :price
-
+      
       t.timestamps
     end
   end

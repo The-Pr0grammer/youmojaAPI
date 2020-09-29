@@ -40,6 +40,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'stripe'
 
 gem 'jwt'
+
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick', '~> 4.3'
+gem 'rack', '~> 2.0.8'
