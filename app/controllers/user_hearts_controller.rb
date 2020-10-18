@@ -1,8 +1,8 @@
 class UserHeartsController < ApplicationController
     def index
         @user_hearts = UserHeart.all.order(id: :desc)
-        render json: @user_hearts,
-        include: {user: {},user_biz: {}}
+        render json: @user_hearts
+        # include: {user: {},user_biz: {}}
     end
 
 

@@ -63,11 +63,12 @@ ActiveRecord::Schema.define(version: 2020_09_29_200950) do
     t.string "facebook"
     t.string "phone"
     t.string "email"
-    t.string "image_url"
+    t.string "img_url"
+    t.string "images"
+    t.string "file_name"
     t.integer "hearts"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.json "biz_images"
   end
 
   create_table "comment_votes", force: :cascade do |t|

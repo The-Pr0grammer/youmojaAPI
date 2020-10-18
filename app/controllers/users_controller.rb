@@ -28,7 +28,8 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user ,include: {user_bizs:{include:{user:{},business:{include:{comments:{include:{user:{}}}}}}},user_hearts: {include:{user_biz:{include:{user:{},business:{include:{comments:{include:{user:{}}}}}}}}}}
+    render json: @user , serializer: UserSerializer
+    # , include: {user_hearts: {include:{user_biz:{include:{user:{},business:{include:{comments:{include:{user:{}}}}}}}}}}
   end
 
   # POST /users
