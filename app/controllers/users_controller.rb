@@ -52,6 +52,24 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
+    
+    if  params[:user][:image]
+      @user.image.purge
+      params[:user][:image].map{|image| 
+      decoded_image = Base64.decode64(image["image"])
+      image_io = StringIO.new(decoded_image)
+      @user.image.attach(io: image_io, filename: image["file_name"])
+    }
+
+    unless @user.save
+      puts @user.errors.inspect
+      return render json: { error: "Unable to update user avatar" }, status: 422
+    end
+
+    return render json: @user
+
+  end 
+
     if @user.update(user_params)
       render json: @user
     else
@@ -72,6 +90,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:id,:name, :username, :website, :img_url, :email, :opaque, :opaque_two) ##password and password confirmation keys were removed 8/20
+      params.require(:user).permit(:id,:name, :username, :website, :img_url, :email, :opaque, :opaque_two, image: []) 
     end
 end

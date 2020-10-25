@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :biz_badges
   has_many :user_hearts, dependent: :destroy 
   has_many :comment_votes, dependent: :destroy
+  has_one_attached :image
+
 end

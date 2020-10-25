@@ -1,6 +1,7 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :id, :business_id, :content, :score, :created_at, :updated_at, :comment_votes
+  attributes :id, :business_id, :content, :score, :created_at, :updated_at
   belongs_to :user, serializer: NestedUserSerializer
+  has_many :comment_votes
 
   # def user
   #   object.user do |user|

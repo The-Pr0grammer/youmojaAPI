@@ -1,5 +1,5 @@
 class BusinessSerializer < ActiveModel::Serializer
-  attributes :id, :name, :summary, :categories, :hearts, :img_url, :comments, :images 
+  attributes :id, :name, :city, :summary, :categories, :hearts, :img_url, :comments, :images 
   include Rails.application.routes.url_helpers
 
   def images 
