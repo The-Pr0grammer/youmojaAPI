@@ -45,7 +45,7 @@ gem 'jwt'
 
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick', '~> 4.3'
-gem 'rack', '~> 2.0.8'
+gem 'rack', '~> 2.1.4'
 gem "carrierwave-base64"
 gem 'active_model_serializers'
 gem 'venice', '~> 0.6.0'
