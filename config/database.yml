@@ -91,7 +91,7 @@ default: &default
  
 development:
   <<: *default
-  database: upload_carrier_dev
-  username: youmoja_api_development
+  database: youmoja_api_development
+  username: adot
   password: <%= ENV['YOUMOJA_API_DATABASE_PASSWORD'] %>
   host: localhost

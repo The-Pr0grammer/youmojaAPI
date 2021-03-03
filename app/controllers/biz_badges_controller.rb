@@ -1,2 +1,0 @@
-class BizBadgesController < ApplicationController
-end

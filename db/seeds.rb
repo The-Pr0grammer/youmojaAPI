@@ -32,7 +32,6 @@ UserBiz.create!(user_id:4, business_id:4)
 UserBiz.create!(user_id:5, business_id:5)
 UserBiz.create!(user_id:6, business_id:6)
 
-
 Comment.create!(user_id:1, business_id:1, content:"test1", score:12)
 Comment.create!(user_id:2, business_id:2, content:"test2", score:15)
 Comment.create!(user_id:3, business_id:3, content:"test3", score:22)

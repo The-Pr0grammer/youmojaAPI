@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :user_bizs, dependent: :destroy 
   has_many :businesses, :through => :userbizs , dependent: :destroy 
   has_many :comments, dependent: :destroy 
-  has_many :biz_badges
+  has_many :badges
   has_many :user_hearts, dependent: :destroy 
   has_many :comment_votes, dependent: :destroy
   has_one_attached :image

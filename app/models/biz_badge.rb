@@ -1,2 +1,0 @@
-class BizBadge < ApplicationRecord
-end

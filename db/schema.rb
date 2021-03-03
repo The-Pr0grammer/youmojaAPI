@@ -37,17 +37,11 @@ ActiveRecord::Schema.define(version: 2020_09_29_200950) do
   end
 
   create_table "badges", force: :cascade do |t|
-    t.string "name"
+    t.string "color"
     t.integer "user_id"
     t.integer "business_id"
-    t.integer "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "biz_badges", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "business_id"
+    t.decimal "price"
+    t.string "receipt"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
