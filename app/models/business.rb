@@ -1,8 +1,8 @@
 class Business < ApplicationRecord
-    has_many :comments,  -> { order(:comments => :desc) }, dependent: :destroy 
-    has_many :badges , dependent: :destroy 
     has_one :user_biz
-
+    has_many :comments,  -> { order(:comments => :desc) }, dependent: :destroy 
+    has_many :user_hearts, dependent: :destroy 
+    has_many :badges , dependent: :destroy 
     has_many_attached :images
     # mount_uploaders :biz_images, BizImageUploader
     # validates_processing_of :biz_image

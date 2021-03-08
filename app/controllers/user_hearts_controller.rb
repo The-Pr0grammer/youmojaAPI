@@ -8,7 +8,7 @@ class UserHeartsController < ApplicationController
 
     def show
         @user_heart = UserHeart.find_by(id:params[:id])        
-        render json: @user_heart, include: {user: {}, user_biz: {include:{business:{include:{comments:{}}},user:{}}}}
+        render json: @user_heart, include: {user: {}, business: {}}
     end
 
     def create
@@ -17,6 +17,6 @@ class UserHeartsController < ApplicationController
     end
  
     def user_heart_params
-        params.require(:user_heart).permit(:user_id, :user_biz_id)
+        params.require(:user_heart).permit(:user_id, :business_id)
     end
 end

@@ -5,11 +5,16 @@ Rails.application.routes.draw do
   resources :biz_badges
   resources :badges
   resources :comments
-  resources :user_bizs
   resources :businesses
+  # resources :user_bizs
   resources :users do
     collection do
       post 'login'
+    end
+  end
+  resources :user_bizs do
+    collection do
+      get 'badges'
     end
   end
   
